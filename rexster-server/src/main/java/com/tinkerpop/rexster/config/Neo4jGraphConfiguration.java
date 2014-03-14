@@ -25,6 +25,7 @@ public class Neo4jGraphConfiguration implements GraphConfiguration {
         }
 
         final boolean highAvailabilityMode = properties.getBoolean(Tokens.REXSTER_GRAPH_HA, false);
+        final boolean neoServerMode = properties.getBoolean(Tokens.REXSTER_GRAPH_RAW_API, false);
 
         // get the <properties> section of the xml configuration
         final HierarchicalConfiguration graphSectionConfig = (HierarchicalConfiguration) properties;

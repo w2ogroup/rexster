@@ -45,6 +45,7 @@ public class Tokens {
     public static final String REXSTER_GRAPH_PROPERTIES = "properties";
     public static final String REXSTER_GRAPH_BUFFER_SIZE = "graph-buffer-size";
     public static final String REXSTER_GRAPH_HA = "graph-high-availability";
+    public static final String REXSTER_GRAPH_RAW_API = "graph-raw-api";
     public static final String REXSTER_REPORTER_TIME_UNIT = "report-time-unit";
     public static final String REXSTER_REPORTER_PERIOD = "report-period";
     public static final String REXSTER_REPORTER_RATES_TIME_UNIT = "rates-time-unit";

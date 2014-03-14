@@ -50,11 +50,11 @@
     </scm>
 
     <modules>
-        <module>rexster-server</module>
-        <module>rexster-kibbles</module>
-        <module>rexster-core</module>
-        <module>rexster-console</module>
         <module>rexster-protocol</module>
+        <module>rexster-core</module>
+        <module>rexster-kibbles</module>
+        <module>rexster-server</module>
+        <module>rexster-console</module>
     </modules>
 
     <properties>
@@ -63,7 +63,7 @@
         <gremlin.version>2.4.0</gremlin.version>
         <pipes.version>2.4.0</pipes.version>
         <frames.version>2.4.0</frames.version>
-        <rexster.version>2.4.0</rexster.version>
+        <rexster.version>W2O-2.4.0</rexster.version>
         <jersey.version>1.17</jersey.version>
         <grizzly.version>2.2.16</grizzly.version>
         <metrics.version>3.0.0</metrics.version>
