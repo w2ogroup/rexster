@@ -1,6 +1,7 @@
 package com.tinkerpop.rexster.config;
 
 import com.tinkerpop.blueprints.Graph;
+import com.tinkerpop.blueprints.impls.neo4j.Neo4jApiSupportedGraph;
 import com.tinkerpop.blueprints.impls.neo4j.Neo4jGraph;
 import com.tinkerpop.blueprints.impls.neo4j.Neo4jHaGraph;
 import com.tinkerpop.rexster.Tokens;
@@ -54,6 +55,11 @@ public class Neo4jGraphConfiguration implements GraphConfiguration {
             }
 
             if (highAvailabilityMode) {
+
+                if(neoServerMode) {
+                    throw new GraphConfigurationException("Neo4j HA and raw api server modes are incompatible.  Please choose one or the other");
+                }
+
                 if (!neo4jProperties.containsKey("ha.machine_id")) {
                     throw new GraphConfigurationException("Check graph configuration. Neo4j HA requires [ha.machine_id] in the <properties> of the configuration");
                 }
@@ -68,6 +74,8 @@ public class Neo4jGraphConfiguration implements GraphConfiguration {
 
                 return new Neo4jHaGraph(graphFile, neo4jProperties);
 
+            } else if(neoServerMode) {
+                return new Neo4jApiSupportedGraph(graphFile, neo4jProperties);
             } else {
                 return new Neo4jGraph(graphFile, neo4jProperties);
             }
